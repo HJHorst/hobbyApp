@@ -1,0 +1,9 @@
+<ion-view view-title="Artikelen">
+  <ion-content>
+    <ion-list>
+      <div ng-repeat="artikel in artikelen | orderBy: 'lemma'">
+        <a class="item" href="#/app/artikel/{{artikel.id}}">{{artikel.lemma}}</a>
+      <div>
+    </ion-list>
+  </ion-content>
+</ion-view>

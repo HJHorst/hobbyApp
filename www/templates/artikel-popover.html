@@ -1,0 +1,15 @@
+<ion-popover-view>
+	<ion-header-bar>
+		<h1 class="title">Artikel {{artikel.lemma}}</h1>
+	 </ion-header-bar>
+	 <ion-content>
+	 	<ul class="list">
+	 		<li class="item" ng-click="openPopCommentaar($event)">Feedback zeg maar</li>
+	 		<li class="item" ng-click="showLuisterAlert()">Ik wil luisteren</li>
+	 		<li class="item" ng-click="showBewaarAlert()">Ik wil bewaren</li>
+	 		<li class="item">Goed matig slecht
+	 			<rating ng-model="userArtikel.sterren" max="5" ng-change="saveSterren()"></rating>
+	 		</li>
+	 	</ul>
+	 </ion-content>
+</ion-popover-view>

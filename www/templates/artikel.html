@@ -1,0 +1,29 @@
+<ion-view view-title="Artikel">
+    <ion-nav-buttons side="secondary">
+      <div class="buttons">
+        <button class="button button-icon icon ion-more"
+          ng-click="openPopover($event)"></button>
+      </div>
+    </ion-nav-buttons>
+  <ion-content>
+  	<div class="card">
+  		<div class="item">
+    		<h1>{{artikel.lemma}}</h1>
+    	</div>
+		<div class="item item-image" ng-if="artikel.plaatje">
+    		<img ng-src="{{baseURL+'/img/'+artikel.plaatje}}">
+  		</div>    	
+    	{{artikel.tekst}}
+    </div>
+    <div ng-if="waardering.sterren">
+      <rating ng-model="waardering.sterren" max="5" readonly="readOnly"></rating> 
+      (Deze waardering is tot stand gekomen door optellen, aftrekken en dat dies meer zij van waarderingen van {{waardering.waarderingen}} subject(en))
+    </div>
+    <div class="list">
+      <div class="item" ng-repeat="commentaar in commentaren | orderBy: '-datum'">
+        {{commentaar.tekst}}
+        {{commentaar.datum | date}} - {{commentaar.user}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
